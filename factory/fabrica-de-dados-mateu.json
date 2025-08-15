@@ -1,0 +1,9 @@
+{
+	"name": "fabrica-de-dados-mateu",
+	"location": "brazilsouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c80fe50c-b746-472d-9d2b-65986f08d035",
+		"tenantId": "88c276cf-1614-4a59-aa3c-fd8e06dadec7"
+	}
+}
