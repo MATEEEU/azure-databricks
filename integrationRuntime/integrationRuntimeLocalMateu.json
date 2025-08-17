@@ -1,0 +1,7 @@
+{
+	"name": "integrationRuntimeLocalMateu",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Integration Runtime para conexão com o banco SQL Local da minha máquina"
+	}
+}
