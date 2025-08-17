@@ -1,0 +1,25 @@
+{
+	"name": "AnaliseCervejariaTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline-vendas-cervejaria",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 3,
+				"startTime": "2025-08-17T22:56:00",
+				"endTime": "2025-08-18T20:10:00",
+				"timeZone": "E. South America Standard Time"
+			}
+		}
+	}
+}
