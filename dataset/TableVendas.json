@@ -1,0 +1,41 @@
+{
+	"name": "TableVendas",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServerLocalMateu",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "id_venda",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "categoria",
+				"type": "nchar"
+			},
+			{
+				"name": "estilo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "preco",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "quantidade",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "vendas"
+		}
+	}
+}
