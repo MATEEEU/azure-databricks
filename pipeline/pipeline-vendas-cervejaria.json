@@ -17,11 +17,6 @@
 				"typeProperties": {
 					"source": {
 						"type": "SqlServerSource",
-						"additionalColumns": [
-							{
-								"value": "$$COLUMN:categoria"
-							}
-						],
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
