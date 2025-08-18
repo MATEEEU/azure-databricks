@@ -17,6 +17,39 @@
 			},
 			"firstRowAsHeader": true
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "id_venda",
+				"type": "String"
+			},
+			{
+				"name": "data_pedido",
+				"type": "String"
+			},
+			{
+				"name": "previsao_entrega",
+				"type": "String"
+			},
+			{
+				"name": "data_entrega",
+				"type": "String"
+			},
+			{
+				"name": "status_entrega",
+				"type": "String"
+			},
+			{
+				"name": "transportadora",
+				"type": "String"
+			},
+			{
+				"name": "custo_frete",
+				"type": "String"
+			},
+			{
+				"name": "id_rastreio",
+				"type": "String"
+			}
+		]
 	}
 }
