@@ -1,0 +1,22 @@
+{
+	"name": "planilhaEntregasInterno",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "meudatalake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "interno_AnaliseCervejaria"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "raw",
+				"container": "engenhariadedados"
+			}
+		},
+		"schema": []
+	}
+}

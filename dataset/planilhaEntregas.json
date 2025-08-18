@@ -1,12 +1,12 @@
 {
-	"name": "plailhaEntregas",
+	"name": "planilhaEntregas",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "planilhaviahttp",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
-			"name": "bronze_AnaliseCervejaria"
+			"name": "externo_AnaliseCervejaria"
 		},
 		"annotations": [],
 		"type": "Excel",
