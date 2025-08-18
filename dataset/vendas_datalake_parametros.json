@@ -1,0 +1,47 @@
+{
+	"name": "vendas_datalake_parametros",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "meudatalake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"conteiner": {
+				"type": "string"
+			},
+			"diretorio": {
+				"type": "string"
+			},
+			"nome": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "interno_AnaliseCervejaria"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().nome",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().diretorio",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().conteiner",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
