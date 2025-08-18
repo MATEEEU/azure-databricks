@@ -1,0 +1,12 @@
+{
+	"name": "planilhaviahttp",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://docs.google.com/spreadsheets/d/1wWF958qOUIP-kZa7_5ScvxEucDw78wc-OZh-iYX5mw4/export?format=xlsx&gid=0",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
