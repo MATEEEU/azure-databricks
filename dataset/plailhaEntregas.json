@@ -1,0 +1,21 @@
+{
+	"name": "plailhaEntregas",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "planilhaviahttp",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "bronze_AnaliseCervejaria"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
