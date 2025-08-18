@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "fabrica-de-dados-mateu"
+		},
+		"GoogleSheets1_apiToken": {
+			"value": ""
+		},
+		"SqlServerLocalMateu_password": {
+			"value": ""
+		},
+		"meudatalake_connectionString": {
+			"value": ""
+		},
+		"SqlServerLocalMateu_properties_typeProperties_server": {
+			"value": "NMB-DADOS-474"
+		},
+		"SqlServerLocalMateu_properties_typeProperties_database": {
+			"value": "cervejaria"
+		},
+		"SqlServerLocalMateu_properties_typeProperties_userName": {
+			"value": "NMB-DADOS-474\\MB Labs"
+		},
+		"planilhaviahttp_properties_typeProperties_url": {
+			"value": "https://docs.google.com/spreadsheets/d/1wWF958qOUIP-kZa7_5ScvxEucDw78wc-OZh-iYX5mw4/export?format=xlsx&gid=0"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
