@@ -1,0 +1,41 @@
+{
+	"name": "Json_parametros",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "meudatalake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "interno_AnaliseCervejaria"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "parametros_extracao.json",
+				"folderPath": "config",
+				"container": "engenhariadedados"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"Parametros": {
+					"type": "object",
+					"properties": {
+						"Conteiner": {
+							"type": "string"
+						},
+						"Diretorio": {
+							"type": "string"
+						},
+						"NomeArquivo": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	}
+}
