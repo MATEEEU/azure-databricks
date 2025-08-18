@@ -133,7 +133,7 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".parquet"
+							"fileExtension": ".csv"
 						}
 					},
 					"enableStaging": false,
