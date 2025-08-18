@@ -96,6 +96,52 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Json_parametros')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "meudatalake",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "interno_AnaliseCervejaria"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "parametros_extracao.json",
+						"folderPath": "config",
+						"container": "engenhariadedados"
+					}
+				},
+				"schema": {
+					"type": "object",
+					"properties": {
+						"Parametros": {
+							"type": "object",
+							"properties": {
+								"Conteiner": {
+									"type": "string"
+								},
+								"Diretorio": {
+									"type": "string"
+								},
+								"NomeArquivo": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/meudatalake')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ext_entregas')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -347,67 +393,6 @@
 								"parameters": {}
 							}
 						]
-					},
-					{
-						"name": "Copiar dados dos clientes",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "Copiar dados das vendas",
-								"dependencyConditions": [
-									"Completed"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "SqlServerSource",
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"sink": {
-								"type": "SqlServerSink",
-								"writeBehavior": "upsert",
-								"upsertSettings": {
-									"useTempDB": true,
-									"keys": [
-										"id_cliente"
-									]
-								},
-								"sqlWriterUseTableLock": false
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "ext_clientes",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "ext_clientes",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
 					}
 				],
 				"policy": {
@@ -420,8 +405,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ext_vendas')]",
-				"[concat(variables('factoryId'), '/datasets/vendas_datalake')]",
-				"[concat(variables('factoryId'), '/datasets/ext_clientes')]"
+				"[concat(variables('factoryId'), '/datasets/vendas_datalake')]"
 			]
 		},
 		{
