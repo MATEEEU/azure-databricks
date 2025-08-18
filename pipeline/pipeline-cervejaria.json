@@ -125,11 +125,134 @@
 							"requestMethod": "GET"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".parquet"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id_venda",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "id_venda",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "data_pedido",
+									"type": "Date",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "data_pedido",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "previsao_entrega",
+									"type": "Date",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "previsao_entrega",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "data_entrega",
+									"type": "Date",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "data_entrega",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "status_entrega",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "status_entrega",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "transportadora",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "transportadora",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "custo_frete",
+									"type": "Double",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "custo_frete",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "id_rastreio",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "id_rastreio",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
 						"referenceName": "ext_entregas",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "int_entregas",
 						"type": "DatasetReference"
 					}
 				]

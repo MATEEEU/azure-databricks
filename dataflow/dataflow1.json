@@ -1,0 +1,34 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ext_entregas",
+						"type": "DatasetReference"
+					},
+					"name": "entregas"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          id_venda as string,",
+				"          data_pedido as date,",
+				"          previsao_entrega as date,",
+				"          data_entrega as date,",
+				"          status_entrega as string,",
+				"          transportadora as string,",
+				"          custo_frete as double,",
+				"          id_rastreio as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> entregas"
+			]
+		}
+	}
+}
