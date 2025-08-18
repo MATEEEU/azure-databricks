@@ -1,0 +1,25 @@
+{
+	"name": "ext_entregas1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "planilhahttpweb",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "externo_AnaliseCervejaria"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/spreadsheets/d/e/2PACX-1vRhvV51oEv7UX21QZgQr2em7ConRCpAaIFm2_blXUTCM4llZ6Dj6iJXWm01rG6Z_5O07tQmlOMhllpu/pub?gid=0&single=true&output=csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
