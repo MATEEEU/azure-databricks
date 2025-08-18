@@ -24,8 +24,18 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "raw",
-				"container": "engenhariadedados"
+				"fileName": {
+					"value": "@dataset().NomeArquivo",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().Diretorio",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().Conteiner",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ";",
 			"escapeChar": "\\",
