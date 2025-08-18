@@ -1,9 +1,9 @@
 {
-	"name": "pipeline-vendas-cervejaria-param",
+	"name": "pipeline-cervejaria",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copia dados param",
+				"name": "raw_vendas",
 				"type": "Copy",
 				"dependsOn": [
 					{
@@ -104,6 +104,35 @@
 						"type": "DatasetReference"
 					}
 				}
+			},
+			{
+				"name": "raw_entregas",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "ExcelSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "ext_entregas",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"folder": {

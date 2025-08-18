@@ -16,7 +16,8 @@
 				"type": "AzureBlobStorageLocation",
 				"folderPath": "raw",
 				"container": "engenhariadedados"
-			}
+			},
+			"firstRowAsHeader": true
 		},
 		"schema": []
 	}
