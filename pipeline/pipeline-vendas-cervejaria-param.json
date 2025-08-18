@@ -56,7 +56,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "vendas_datalake_parametros",
+						"referenceName": "int_vendas",
 						"type": "DatasetReference",
 						"parameters": {
 							"conteiner": {

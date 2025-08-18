@@ -1,0 +1,31 @@
+{
+	"name": "int_vendas2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "meudatalake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "interno_AnaliseCervejaria"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "raw",
+				"container": "engenhariadedados"
+			},
+			"columnDelimiter": ";",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "id_venda;categoria;estilo;preco;quantidade",
+				"type": "String"
+			}
+		]
+	}
+}

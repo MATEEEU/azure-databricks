@@ -1,5 +1,5 @@
 {
-	"name": "vendas_datalake_parametros",
+	"name": "int_vendas",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "meudatalake",
