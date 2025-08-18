@@ -1,5 +1,5 @@
 {
-	"name": "TableVendas",
+	"name": "ext_vendas",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "SqlServerLocalMateu",
