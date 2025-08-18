@@ -151,6 +151,34 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/vendas_datalake')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "meudatalake",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"folderPath": "raw",
+						"container": "engenhariadedados"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/meudatalake')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/SqlServerLocalMateu')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -285,15 +313,15 @@
 								"partitionOption": "None"
 							},
 							"sink": {
-								"type": "SqlServerSink",
-								"writeBehavior": "upsert",
-								"upsertSettings": {
-									"useTempDB": true,
-									"keys": [
-										"id_venda"
-									]
+								"type": "DelimitedTextSink",
+								"storeSettings": {
+									"type": "AzureBlobStorageWriteSettings"
 								},
-								"sqlWriterUseTableLock": false
+								"formatSettings": {
+									"type": "DelimitedTextWriteSettings",
+									"quoteAllText": true,
+									"fileExtension": ".txt"
+								}
 							},
 							"enableStaging": false,
 							"translator": {
@@ -314,7 +342,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "ext_vendas",
+								"referenceName": "vendas_datalake",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -392,6 +420,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ext_vendas')]",
+				"[concat(variables('factoryId'), '/datasets/vendas_datalake')]",
 				"[concat(variables('factoryId'), '/datasets/ext_clientes')]"
 			]
 		},
