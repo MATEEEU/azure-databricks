@@ -5,6 +5,17 @@
 			"referenceName": "meudatalake",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Conteiner": {
+				"type": "string"
+			},
+			"Diretorio": {
+				"type": "string"
+			},
+			"NomeArquivo": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "interno_AnaliseCervejaria"
 		},
