@@ -49,7 +49,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "int_vendas2",
+						"referenceName": "int_vendas",
 						"type": "DatasetReference"
 					}
 				]

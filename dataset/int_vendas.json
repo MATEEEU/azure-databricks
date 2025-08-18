@@ -1,5 +1,5 @@
 {
-	"name": "int_vendas2",
+	"name": "int_vendas",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "meudatalake",
