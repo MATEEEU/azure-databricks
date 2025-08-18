@@ -205,6 +205,9 @@
 					"referenceName": "meudatalake",
 					"type": "LinkedServiceReference"
 				},
+				"folder": {
+					"name": "interno_AnaliseCervejaria"
+				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
@@ -214,6 +217,58 @@
 						"container": "engenhariadedados"
 					},
 					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/meudatalake')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/vendas_datalake_parametros')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "meudatalake",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"conteiner": {
+						"type": "string"
+					},
+					"diretorio": {
+						"type": "string"
+					},
+					"nome": {
+						"type": "string"
+					}
+				},
+				"folder": {
+					"name": "interno_AnaliseCervejaria"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@dataset().nome",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@dataset().diretorio",
+							"type": "Expression"
+						},
+						"container": {
+							"value": "@dataset().conteiner",
+							"type": "Expression"
+						}
+					},
+					"columnDelimiter": ";",
 					"escapeChar": "\\",
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
