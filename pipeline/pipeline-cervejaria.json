@@ -5,6 +5,8 @@
 			{
 				"name": "raw_vendas",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Lookup_parametros",
@@ -78,6 +80,8 @@
 			{
 				"name": "Lookup_parametros",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",

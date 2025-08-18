@@ -16,7 +16,7 @@
 				"folderPath": "raw",
 				"container": "engenhariadedados"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": ";",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
