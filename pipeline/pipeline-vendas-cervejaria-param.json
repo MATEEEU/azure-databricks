@@ -57,7 +57,21 @@
 				"outputs": [
 					{
 						"referenceName": "int_vendas",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Conteiner": {
+								"value": "@activity('Lookup_parametros').output.firstRow.Parametros.Conteiner",
+								"type": "Expression"
+							},
+							"Diretorio": {
+								"value": "@activity('Lookup_parametros').output.firstRow.Parametros.Diretorio",
+								"type": "Expression"
+							},
+							"NomeArquivo": {
+								"value": "@activity('Lookup_parametros').output.firstRow.Parametros.NomeArquivo",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			},
