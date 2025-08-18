@@ -2,7 +2,7 @@
 	"name": "AnaliseCervejariaTrigger",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipelines": [
 			{
 				"pipelineReference": {
