@@ -5,6 +5,9 @@
 			"referenceName": "meudatalake",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "interno_AnaliseCervejaria"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
