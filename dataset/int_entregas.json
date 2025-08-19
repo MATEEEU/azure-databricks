@@ -12,7 +12,9 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation"
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "raw",
+				"container": "engenhariadedados"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
